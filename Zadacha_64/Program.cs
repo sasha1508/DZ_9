@@ -8,16 +8,13 @@ Console.Clear();
 System.Console.Write("Введи число N: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-string PrintNumbers(string numbers, int n)
+string PrintNumbers(int n)
 {
-    if(n == 1) 
-    {
-        numbers = "1";
-        return numbers;
-    }
-    numbers = n + ", " + PrintNumbers(numbers, n-1);
+    if(n == 1) return "1";
+    
+    string numbers = n + ", " + PrintNumbers(n-1);
     return numbers;
 }
 
-string numbers = "";
-System.Console.WriteLine(PrintNumbers(numbers, n));
+
+System.Console.WriteLine(PrintNumbers(n));
